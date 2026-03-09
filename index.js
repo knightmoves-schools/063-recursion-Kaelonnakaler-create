@@ -4,10 +4,11 @@ function markAsDone(todos) {
 
 function transform(index, todos, modifiedTodos){
     if(index < todos.length){
-        // on this line - prepend the string 'done - ' to each `todo` description
-        // on this line - call transform recursively
+        const updated = "done - " + todos[index];
+        return transform(index + 1, todos, [...modifiedTodos, updated]);
         return modifiedTodos
     }else{
         return modifiedTodos
     }
 }
+
